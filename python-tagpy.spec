@@ -8,8 +8,8 @@ Group:		Libraries/Python
 Source0:	http://news.tiker.net/news.tiker.net/download/software/tagpy/tagpy-%{version}.tar.gz
 # Source0-md5:	c9de0b7b3819579b5f460b20c42e03c9
 URL:		http://news.tiker.net/software/tagpy
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	boost-python-devel
-BuildRequires:	boost-bind-devel
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	taglib-devel
