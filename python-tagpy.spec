@@ -1,3 +1,4 @@
+# TODO: optflags
 Summary:	Python bindings for TagLib
 Summary(pl.UTF-8):	Wiązania Pythona dla biblioteki TagLib
 Name:		python-tagpy
@@ -17,31 +18,39 @@ BuildRequires:	taglib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-TagPy is a set of Python bindings for Scott Wheeler’s TagLib. It builds upon
-Boost.Python, a wrapper generation library which is part of the Boost set of
-C++ libraries.
+TagPy is a set of Python bindings for Scott Wheeler's TagLib. It
+builds upon Boost.Python, a wrapper generation library which is part
+of the Boost set of C++ libraries.
 
 Just like TagLib, TagPy can:
+ - read and write ID3 tags of version 1 and 2, with many supported
+   frame types for version 2 (in MPEG Layer 2 and MPEG Layer 3, FLAC
+   and MPC),
+ - access Xiph comments in Ogg Vorbis files and Ogg Flac files,
+ - access APE tags in Musepack and MP3 files.
 
-    * read and write ID3 tags of version 1 and 2, with many supported frame
-      types for version 2 (in MPEG Layer 2 and MPEG Layer 3, FLAC and MPC),
-    * access Xiph Comments in Ogg Vorbis Files and Ogg Flac Files,
-    * access APE tags in Musepack and MP3 files.
+%description -l pl.UTF-8
+TagPy to zestaw wiązań Pythona do biblioteki TagLib Scotta Wheelera.
+Powstał w oparciu o Boost.Python - bibliotekę generowania wrapperów
+będącą częścią bibliotek C++ Boost.
 
-All these features have their own specific interfaces, but TagLib’s generic tag
-reading and writing mechanism is also supported. It comes with a bunch of
-examples.
+Podobnie jak TagLib TagPy pozwala na:
+ - odczyt i zapis znaczników ID3 w wersji 1 i 2 z wieloma
+   obsługiwanymi typami ramek dla wersji 2 (MPEG Layer 2 i 3, FLAC
+   oraz MPC),
+ - dostęp do komentarzy Xiph w plikach Ogg Vorbis i Ogg Flac,
+ - dostęp do znaczników APE w plikach Musepack i MP3.
 
 %prep
 %setup -n tagpy-%{version} -q
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--root $RPM_BUILD_ROOT
 
@@ -57,4 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/tagpy/*.py[co]
 %dir %{py_sitedir}/tagpy/ogg
 %{py_sitedir}/tagpy/ogg/*.py[co]
-%{py_sitedir}/tagpy*egg-info
+%{py_sitedir}/tagpy*.egg-info
