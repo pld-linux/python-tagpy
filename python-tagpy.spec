@@ -2,12 +2,12 @@
 Summary:	Python bindings for TagLib
 Summary(pl.UTF-8):	Wiązania Pythona dla biblioteki TagLib
 Name:		python-tagpy
-Version:	0.91
-Release:	0.1
+Version:	0.94.5
+Release:	1
 License:	BSD-Style
 Group:		Libraries/Python
-Source0:	http://news.tiker.net/news.tiker.net/download/software/tagpy/tagpy-%{version}.tar.gz
-# Source0-md5:	c9de0b7b3819579b5f460b20c42e03c9
+Source0:	http://pypi.python.org/packages/source/t/tagpy/tagpy-%{version}.tar.gz
+# Source0-md5:	84d7862786ad7bab91d0d45ded15a875
 URL:		http://news.tiker.net/software/tagpy
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	boost-python-devel
@@ -45,6 +45,10 @@ Podobnie jak TagLib TagPy pozwala na:
 %setup -n tagpy-%{version} -q
 
 %build
+# this isn't autoconf generated
+./configure \
+	--taglib-inc-dir=`pkg-config --variable=includedir taglib`/taglib \
+	--boost-python-libname=boost_python
 %{__python} setup.py build
 
 %install
