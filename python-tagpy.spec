@@ -11,7 +11,8 @@ Source0:	http://pypi.python.org/packages/source/t/tagpy/tagpy-%{version}.tar.gz
 URL:		http://news.tiker.net/software/tagpy
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	boost-python-devel
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	taglib-devel
 %pyrequires_eq	python-libs
