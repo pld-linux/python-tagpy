@@ -13,6 +13,7 @@ BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	boost-python-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-setuptools >= 1:0.6-2.c8
 BuildRequires:	rpm-pythonprov
 BuildRequires:	taglib-devel
 %pyrequires_eq	python-libs
