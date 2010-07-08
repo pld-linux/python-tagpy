@@ -3,7 +3,7 @@ Summary:	Python bindings for TagLib
 Summary(pl.UTF-8):	Wiązania Pythona dla biblioteki TagLib
 Name:		python-tagpy
 Version:	0.94.5
-Release:	4
+Release:	5
 License:	BSD-Style
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/t/tagpy/tagpy-%{version}.tar.gz
