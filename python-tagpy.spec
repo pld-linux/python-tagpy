@@ -48,7 +48,7 @@ Podobnie jak TagLib TagPy pozwala na:
 
 %build
 # this isn't autoconf generated
-./configure \
+./configure.py \
 	--taglib-inc-dir=`pkg-config --variable=includedir taglib`/taglib \
 	--boost-python-libname=boost_python
 %{__python} setup.py build
