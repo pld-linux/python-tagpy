@@ -51,13 +51,12 @@ Podobnie jak TagLib TagPy pozwala na:
 ./configure.py \
 	--taglib-inc-dir=`pkg-config --variable=includedir taglib`/taglib \
 	--boost-python-libname=boost_python
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py install \
-	--optimize=2 \
+%py_install \
 	--root $RPM_BUILD_ROOT
 
 %py_postclean
