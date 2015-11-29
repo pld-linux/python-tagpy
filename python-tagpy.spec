@@ -9,6 +9,7 @@ Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/t/tagpy/tagpy-%{version}.tar.gz
 # Source0-md5:	6baff63318cf90b9bc5a2497a0597802
 URL:		http://news.tiker.net/software/tagpy
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	boost-python-devel
 BuildRequires:	pkgconfig
